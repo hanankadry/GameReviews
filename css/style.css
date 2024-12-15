@@ -1,0 +1,152 @@
+/* global */
+:root {
+    --primary-color: #272b30;
+    --secondary-color: #32383e;
+    --txt-color: #fff;
+    --btn-main-color: #272729;
+    --font-primary: "Comic Neue", cursive;
+    --font-secondary: "Nerko One", sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--secondary-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 50px;
+    box-shadow: 0 0 5px rgb(0 0 0 / .5) inset;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    background-color: var(--primary-color);
+    color: var(--txt-color);
+}
+
+ul {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-secondary);
+}
+
+
+/* bg img */
+header img {
+    width: 100%;
+    max-height: 30vh;
+    object-fit: cover;
+}
+
+
+/* navbar */
+nav {
+    background-color: rgb(58, 73, 123);
+    margin: auto;
+    margin-top: -30px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgb(0 0 0 / .7);
+}
+
+.navbar-brand,
+.navbar-brand:hover,
+.nav-item .nav-link {
+    color: var(--txt-color);
+}
+
+.navbar-brand {
+    font-size: 25px;
+}
+
+.nav-item .nav-link.active,
+.nav-item .nav-link:hover {
+    color: #09c;
+    transition: .5s;
+}
+
+
+/* loading spinner */
+.loading {
+    position: fixed;
+    z-index: 999;
+    inset: 0;
+    background-color: rgba(39, 43, 48, .89);
+}
+
+.loader {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 4px solid #fff;
+    border-right: 4px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+.loader::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border-left: 4px solid #ff3d00;
+    border-bottom: 4px solid transparent;
+    animation: rotation .5s linear infinite reverse;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* games list */
+
+.content .card {
+    filter: grayscale(.7);
+    transition: all .5s;
+    color: var(--txt-color);
+}
+
+.content .card:hover {
+    transform: scale(1.05);
+    filter: grayscale(0);
+}
+
+.content .card-text {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.content .badge-color {
+    background-color: var(--secondary-color);
+}
+
+/* game details */
+
+.details {
+    background-color: #27282B;
+    min-height: 100vh;
+}
